@@ -1,0 +1,56 @@
+@using PackerTracker.Models;
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <title>Packing Aid</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Packing Aid</h1>
+    <p></p>
+    <p>Click on an entry to see more information.</p>
+    <p></p>
+    <div class="row">
+      <div class="col col-md-4">
+        <h3 style="text-decoration: underline;">Packed</h3>
+        <ul>
+          @foreach (Item item in Model)
+          {
+            @if (item.IsPacked == true)
+            {
+              <li><a href="/item/@item.Id">@item.Name</a></li>
+            }
+          }
+        </ul>
+      </div>
+      <div class="col col-md-4">
+        <h3 style="text-decoration: underline;">Need to Pack</h3>
+        <ul>
+          @foreach (Item item in Model)
+          {
+            @if (item.IsPacked == false && item.IsPurchased == true)
+            {
+              <li><a href="/item/@item.Id">@item.Name</a></li>
+            }
+          }
+        </ul>
+      </div>
+      <div class="col col-md-4">
+        <h3 style="text-decoration: underline;">Need to Buy</h3>
+        <ul>
+          @foreach (Item item in Model)
+          {
+            @if (item.IsPacked == false && item.IsPurchased == false)
+            {
+              <li><a href="/item/@item.Id">@item.Name</a></li>
+            }
+          }
+        </ul>
+      </div>
+    </div>
+
+    <a href="/item/new">Add an Item</a>
+  </body>
+</html>

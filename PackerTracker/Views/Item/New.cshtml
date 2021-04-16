@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Packing Aid</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Packing Aid</h1>
+    <p></p>
+
+    <form action="/item" method="POST">
+      <label for="name">Package Name:</label>
+      <input type="text" name="name" id="name" placeholder="ITEM NAME">
+      <p></p>
+      <label for="weight">Package Weight (rounding up to the nearest 1/10th pound):</label>
+      <input type="number" name="weight" id="weight" step="0.1" min="0" max="100" placeholder="ITEM WEIGHT">
+      <p></p>
+      <input type="checkbox" name="isPacked" id="isPacked">
+      <label for="isPacked">The item is packed</label>
+      <p></p>
+      <input type="checkbox" name="isPurchased" id="isPurchased" checked>
+      <label for="isPurchased">The item is packed</label>
+      <p></p>
+      <button type="submit">Add Item to List</button>
+    </form>
+
+    <p></p>
+    <a href="/item">Back to your packing list</a>
+  </body>
+</html>

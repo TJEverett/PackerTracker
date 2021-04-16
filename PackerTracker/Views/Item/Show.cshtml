@@ -1,0 +1,19 @@
+@using PackerTracker.Models;
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Packing Aid</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Packing Aid</h1>
+    <p></p>
+    <p>Name: @Model.Name</p>
+    <p>Weight: @Model.Weight</p>
+    <p>Is it already Packed: @Model.IsPacked</p>
+    <p>Is it already Purchased: @Model.IsPurchased</p>
+    <p></p>
+    <a href="/item">Back to your packing list</a>
+  </body>
+</html>
